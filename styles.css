@@ -70,15 +70,15 @@
 @layer font-embedding {
 
     @font-face {
-        font-family: "Poppins Extralight";
-        src: local("Poppins-Extralight"), url("fonts/Poppins-ExtraLight.ttf") format("truetype");
+        font-family: "Poppins";
+        src: local("Poppins-ExtraLight"), url("fonts/Poppins-ExtraLight.ttf") format("truetype");
         font-weight: 200;
         font-style: normal;
         font-display: swap;
     }
 
     @font-face {
-        font-family: "Poppins Regular";
+        font-family: "Poppins";
         src: local("Poppins-Regular"), url("fonts/Poppins-Regular.ttf") format("truetype");
         font-weight: 400;
         font-style: normal;
@@ -86,19 +86,54 @@
     }
 
     @font-face {
-        font-family: "Poppins Semibold";
-        src: local("Poppins-Semibold"), url("fonts/Poppins-SemiBold.ttf") format("truetype");
+        font-family: "Poppins";
+        src: local("Poppins-SemiBold"), url("fonts/Poppins-SemiBold.ttf") format("truetype");
         font-weight: 600;
         font-style: normal;
         font-display: swap;
     }
-    
+
 }
 
 @layer base {
 
     /* Primitive Properties */
     :root {
+
+        --white: hsl(0, 0%, 100%);
+        --grey-500: hsl(234, 12%, 34%);
+        --grey-400: hsl(212, 6%, 44%);
+        --red: hsl(0, 78%, 62%);
+        --cyan: hsl(180, 62%, 55%);
+        --orange: hsl(34, 97%, 64%);
+        --blue: hsl(212, 86%, 64%);
+
+        --font-family: "Poppins", sans-serif;
+
+        --font-weight-extralight: 200;
+        --font-weight-regular: 400;
+        --font-weight-semibold: 600;
+
+        --font-size-163: 0.8125rem;
+        --font-size-188: 0.9375rem;
+        --font-size-250: 1.25rem;
+        --font-size-450: 2.25rem;
+
+        --line-height-tight: 1.35;
+        --line-height-snug: 1.4;
+        --line-height-relaxed: 1.6;
+
+        --letter-spacing-normal: 0;
+        /* The em value always relates to the font size of the element it is applied to, not to the root font size (e.g. 16px). Here it's 12px. Therefore: 5px Letter Spacing  / 12px Font size = 0.4167em */
+        --letter-spacing-wide: 0.00694444em;
+
+        --border-radius-100: 0.5rem;
+
+        --space-100: 0.5rem;
+        --space-200: 1rem;
+        --space-300: 1.5rem;
+        --space-400: 2rem;
+        --space-500: 2.5rem;
 
     }
 
