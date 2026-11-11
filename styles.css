@@ -48,11 +48,6 @@
         text-wrap: balance;
     }
 
-    p,
-    li {
-        text-wrap: pretty;
-    }
-
     img,
     picture {
         max-inline-size: 100%;
@@ -101,7 +96,7 @@
     :root {
         --color-white: hsl(0, 0%, 100%);
         --color-grey-100: hsl(0, 0%, 98%);
-        --color-greyblue: hsl(213, 47%, 67%);
+        --color-greyblue: hsl(213, 47%, 67%, 0.7);
         --color-grey-400: hsl(212, 6%, 44%);
         --color-grey-500: hsl(234, 12%, 34%);
         --color-red: hsl(0, 78%, 62%);
@@ -118,6 +113,7 @@
         --font-size-163: 0.8125rem;
         --font-size-188: 0.9375rem;
         --font-size-250: 1.25rem;
+        --font-size-300: 1.5rem;
         --font-size-450: 2.25rem;
 
         --line-height-semitight: 1.35;
@@ -132,10 +128,13 @@
         --space-100: 0.5rem;
         --space-200: 1rem;
         --space-300: 1.5rem;
+        --space-350: 1.75rem;
         --space-400: 2rem;
         --space-500: 2.5rem;
+        --space-525: 2.625rem;
         --space-750: 3.75rem;
         --space-925: 4.625rem;
+        --space-938: 4.688rem;
 
     }
 
@@ -156,7 +155,7 @@
 
         --font-family-base: var(--font-family-poppins);
 
-        --font-size-heading: var(--font-size-450);
+        --font-size-heading: var(--font-size-300);
         --font-size-base: var(--font-size-188);
         --font-size-card-heading: var(--font-size-250);
         --font-size-card-base: var(--font-size-163);
@@ -174,6 +173,21 @@
         --letter-spacing-heading: var(--letter-spacing-wide);
 
         --border-radius-card: var(--border-radius-100);
+
+        @media (width > 48em) {
+            --font-size-heading: var(--font-size-450);
+        }
+    }
+
+    body {
+        background-color: var(--color-bg-body);
+        font-family: var(--font-family-base), sans-serif;
+        font-size: var(--font-size-base);
+        color: var(--color-text-base);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-block: var(--space-400);
     }
 }
 
@@ -277,8 +291,88 @@
 
 @layer components {
 
+    .card {
+        position: relative;
+
+        background-color: var(--color-bg-card);
+        padding: var(--space-400);
+        border-radius: var(--border-radius-card);
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+        gap: var(--space-400);
+        box-shadow: 0 15px 30px -11px var(--color-shadow-card);
+    }
+
+
 }
 
 @layer utilities {
 
+    .header {
+        grid-area: head;
+    }
+
+    .card-supervisor {
+        grid-area: supervisor;
+        @media (width > 48em) {
+            margin: 0 auto;
+        }
+
+        @media (width > 68em) {
+            margin-block: 50%;
+        }
+    }
+
+    .card-team {
+        grid-area: team;
+    }
+
+    .card-karma {
+        grid-area: karma;
+    }
+
+    .card-calculator {
+        grid-area: calculator;
+        @media (width > 48em) {
+            margin: 0 auto;
+        }
+        @media (width > 68em) {
+            margin-block: 50%;
+        }
+    }
+
+    .card-supervisor,
+    .card-team,
+    .card-karma,
+    .card-calculator {
+        max-inline-size: 314px;
+        margin: auto auto;
+    }
+
+    .card::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 4px;
+        background: black;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .card-supervisor::before {
+        background: var(--color-border-card-supervisor);
+    }
+
+    .card-team::before {
+        background: var(--color-border-card-team);
+    }
+
+    .card-karma::before {
+        background: var(--color-border-card-karma);
+    }
+
+    .card-calculator::before {
+        background: var(--color-border-card-calculator);
+    }
 }
