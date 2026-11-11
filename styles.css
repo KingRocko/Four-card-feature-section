@@ -99,16 +99,17 @@
 
     /* Primitive Properties */
     :root {
+        --color-white: hsl(0, 0%, 100%);
+        --color-grey-100: hsl(0, 0%, 98%);
+        --color-greyblue: hsl(213, 47%, 67%);
+        --color-grey-400: hsl(212, 6%, 44%);
+        --color-grey-500: hsl(234, 12%, 34%);
+        --color-red: hsl(0, 78%, 62%);
+        --color-cyan: hsl(180, 62%, 55%);
+        --color-orange: hsl(34, 97%, 64%);
+        --color-blue: hsl(212, 86%, 64%);
 
-        --white: hsl(0, 0%, 100%);
-        --grey-500: hsl(234, 12%, 34%);
-        --grey-400: hsl(212, 6%, 44%);
-        --red: hsl(0, 78%, 62%);
-        --cyan: hsl(180, 62%, 55%);
-        --orange: hsl(34, 97%, 64%);
-        --blue: hsl(212, 86%, 64%);
-
-        --font-family: "Poppins", sans-serif;
+        --font-family-poppins: "Poppins", sans-serif;
 
         --font-weight-extralight: 200;
         --font-weight-regular: 400;
@@ -123,9 +124,8 @@
         --line-height-snug: 1.4;
         --line-height-relaxed: 1.6;
 
-        --letter-spacing-normal: 0;
-        /* The em value always relates to the font size of the element it is applied to, not to the root font size (e.g. 16px). Here it's 12px. Therefore: 5px Letter Spacing  / 12px Font size = 0.4167em */
-        --letter-spacing-wide: 0.00694444em;
+        /* The em value always relates to the font size of the element it is applied to, not to the root font size (e.g. 16px). Formula: 0.25px Letter Spacing  / 36px Font size = 0.0069 em */
+        --letter-spacing-wide: 0.0069em;
 
         --border-radius-100: 0.5rem;
 
@@ -134,12 +134,46 @@
         --space-300: 1.5rem;
         --space-400: 2rem;
         --space-500: 2.5rem;
+        --space-750: 3.75rem;
+        --space-925: 4.625rem;
 
     }
 
     /* Semantic Properties */
     :root {
+        --color-bg-body: var(--color-grey-100);
+        --color-bg-card: var(--color-white);
 
+        --color-shadow-card: var(--color-greyblue);
+
+        --color-border-card-supervisor: var(--color-cyan);
+        --color-border-card-team: var(--color-red);
+        --color-border-card-karma: var(--color-orange);
+        --color-border-card-calculator: var(--color-blue);
+
+        --color-text-base: var(--color-grey-500);
+        --color-text-card-base: var(--color-grey-400);
+
+        --font-family-base: var(--font-family-poppins);
+
+        --font-size-heading: var(--font-size-450);
+        --font-size-base: var(--font-size-188);
+        --font-size-card-heading: var(--font-size-250);
+        --font-size-card-base: var(--font-size-163);
+
+        --font-weight-heading: var(--font-weight-semibold);
+        --font-weight-heading-intro: var(--font-weight-extralight);
+        --font-weight-base: var(--font-weight-regular);
+        --font-weight-card-heading: var(--font-weight-semibold);
+
+        --line-height-heading: var(--line-height-snug);
+        --line-height-base: var(--line-height-snug);
+        --line-height-card-heading: var(--line-height-tight);
+        --line-height-card-base: var(--line-height-relaxed);
+
+        --letter-spacing-heading: var(--letter-spacing-wide);
+
+        --border-radius-card: var(--border-radius-100);
     }
 }
 
