@@ -179,6 +179,100 @@
 
 @layer layout {
 
+    .grid {
+        display: grid;
+        grid-template-areas:
+        "head"
+        "supervisor"
+        "team"
+        "karma"
+        "calculator";
+        max-inline-size: 90%;
+        gap: var(--space-400);
+
+        @media (width > 48em) {
+            grid-template-areas:
+        "head head"
+        "supervisor supervisor"
+        "team karma"
+        "calculator calculator";
+        }
+
+        @media (width > 70em) {
+            grid-template-areas:
+        "head head head"
+        "supervisor team calculator"
+        "supervisor karma calculator";
+        }
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-200);
+        margin-block-end: var(--space-350);
+
+        @media (width > 48em) {
+            margin-block-end: var(--space-525);
+        }
+    }
+
+    .heading-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-heading-intro,
+    .main-heading {
+        font-size: var(--font-size-heading);
+        text-align: center;
+    }
+
+    .main-heading-intro {
+        font-weight: var(--font-weight-heading-intro);
+    }
+
+    .main-introduction {
+        text-align: center;
+        max-inline-size: 314px;
+        font-size: var(--font-size-base);
+
+        @media (width > 48em) {
+            max-inline-size: 500px;
+
+        }
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 6px;
+    }
+
+    .card-title {
+        line-height: var(--line-height-card-heading);
+    }
+
+    .card-description {
+        line-height: var(--line-height-card-base);
+        font-size: var(--font-size-card-base);
+        color: var(--color-text-card-base);
+    }
+
+    .card-image-wrapper {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        inline-size: 100%;
+    }
+
+
 }
 
 @layer components {
