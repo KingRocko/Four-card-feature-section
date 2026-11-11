@@ -120,7 +120,7 @@
         --font-size-250: 1.25rem;
         --font-size-450: 2.25rem;
 
-        --line-height-tight: 1.35;
+        --line-height-semitight: 1.35;
         --line-height-snug: 1.4;
         --line-height-relaxed: 1.6;
 
@@ -168,7 +168,7 @@
 
         --line-height-heading: var(--line-height-snug);
         --line-height-base: var(--line-height-snug);
-        --line-height-card-heading: var(--line-height-tight);
+        --line-height-card-heading: var(--line-height-semitight);
         --line-height-card-base: var(--line-height-relaxed);
 
         --letter-spacing-heading: var(--letter-spacing-wide);
