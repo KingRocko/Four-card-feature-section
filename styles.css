@@ -125,17 +125,12 @@
 
         --border-radius-100: 0.5rem;
 
-        --space-100: 0.5rem;
+        --space-050: 0.25rem;
+        --space-075: 0.375rem;
         --space-200: 1rem;
-        --space-300: 1.5rem;
         --space-350: 1.75rem;
         --space-400: 2rem;
-        --space-500: 2.5rem;
         --space-525: 2.625rem;
-        --space-750: 3.75rem;
-        --space-925: 4.625rem;
-        --space-938: 4.688rem;
-
     }
 
     /* Semantic Properties */
@@ -174,7 +169,7 @@
 
         --border-radius-card: var(--border-radius-100);
 
-        @media (width > 48em) {
+        @media (width > 44em) {
             --font-size-heading: var(--font-size-450);
         }
     }
@@ -182,7 +177,9 @@
     body {
         background-color: var(--color-bg-body);
         font-family: var(--font-family-base), sans-serif;
+        font-weight: var(--font-weight-base);
         font-size: var(--font-size-base);
+        line-height: var(--line-height-base);
         color: var(--color-text-base);
         display: flex;
         justify-content: center;
@@ -204,46 +201,42 @@
         max-inline-size: 90%;
         gap: var(--space-400);
 
-        @media (width > 48em) {
+        @media (width > 44em) {
             grid-template-areas:
         "head head"
         "supervisor supervisor"
         "team karma"
         "calculator calculator";
+            grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        @media (width > 70em) {
+        @media (width > 65em) {
             grid-template-areas:
         "head head head"
         "supervisor team calculator"
         "supervisor karma calculator";
+            grid-template-columns: repeat(3, minmax(0, 1fr));
         }
     }
 
     .header {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         gap: var(--space-200);
         margin-block-end: var(--space-350);
 
-        @media (width > 48em) {
+        @media (width > 44em) {
             margin-block-end: var(--space-525);
         }
-    }
-
-    .heading-wrapper {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
     }
 
     .main-heading-intro,
     .main-heading {
         font-size: var(--font-size-heading);
         text-align: center;
+        line-height: var(--line-height-heading);
+        letter-spacing: var(--letter-spacing-heading);
     }
 
     .main-heading-intro {
@@ -255,22 +248,16 @@
         max-inline-size: 314px;
         font-size: var(--font-size-base);
 
-        @media (width > 48em) {
+        @media (width > 44em) {
             max-inline-size: 500px;
-
         }
     }
 
-    .card-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: start;
-        gap: 6px;
-    }
-
     .card-title {
+        font-size: var(--font-size-card-heading);
         line-height: var(--line-height-card-heading);
+        font-weight: var(--font-weight-card-heading);
+        margin-block-end: var(--space-075);
     }
 
     .card-description {
@@ -282,30 +269,23 @@
     .card-image-wrapper {
         display: flex;
         justify-content: end;
-        align-items: center;
+        align-items: end;
         inline-size: 100%;
     }
-
-
 }
 
 @layer components {
 
     .card {
         position: relative;
-
         background-color: var(--color-bg-card);
         padding: var(--space-400);
         border-radius: var(--border-radius-card);
         display: flex;
-        justify-content: space-between;
-        align-items: start;
         flex-direction: column;
         gap: var(--space-400);
         box-shadow: 0 15px 30px -11px var(--color-shadow-card);
     }
-
-
 }
 
 @layer utilities {
@@ -316,13 +296,6 @@
 
     .card-supervisor {
         grid-area: supervisor;
-        @media (width > 48em) {
-            margin: 0 auto;
-        }
-
-        @media (width > 68em) {
-            margin-block: 50%;
-        }
     }
 
     .card-team {
@@ -335,12 +308,6 @@
 
     .card-calculator {
         grid-area: calculator;
-        @media (width > 48em) {
-            margin: 0 auto;
-        }
-        @media (width > 68em) {
-            margin-block: 50%;
-        }
     }
 
     .card-supervisor,
@@ -349,15 +316,18 @@
     .card-calculator {
         max-inline-size: 314px;
         margin: auto auto;
+        @media (width > 44em) {
+            max-inline-size: 350px;
+        }
     }
 
     .card::before {
         content: "";
         position: absolute;
         inset: 0 0 auto;
-        height: 4px;
+        height: var(--space-050);
         background: black;
-        border-radius: 16px 16px 0 0;
+        border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
     }
 
     .card-supervisor::before {
