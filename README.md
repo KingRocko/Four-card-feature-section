@@ -41,9 +41,6 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 
-
-### What I learned
-
 ### What I learned
 
 I practised using `grid-template-areas` to create three responsive layouts: a single-column layout for mobile, an intermediate two-column layout, and a three-column desktop layout.
